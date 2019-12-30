@@ -19,7 +19,7 @@ open abstract class Duck {
         quackBehavior.quack()
     }
 
-    fun swim() {
+    fun performSwim() {
         println("모든 오리는 헤엄을 칠 수 있습니다. 모든 오리는 물에 뜹니다.")
     }
 }
