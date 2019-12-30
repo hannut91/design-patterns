@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 import strategy.interfaces.FlyNoWay
+import strategy.interfaces.Sink
 import strategy.interfaces.Squack
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
@@ -48,5 +49,22 @@ internal class DuckTest {
         duck.performQuack()
 
         assertThat(outContent.toString()).isEqualTo("Can't fly!\n삑삑!\n")
+    }
+
+    @Test
+    fun `Swimable Duck`() {
+        class IronDuck : Duck() {
+            override fun display() {
+                // TODO
+            }
+        }
+
+        val duck = IronDuck()
+        duck.swimBehavior = Sink()
+        duck.performFly()
+        duck.performQuack()
+        duck.performSwim()
+
+        assertThat(outContent.toString()).isEqualTo("I'm flying!\n꽥꽥!\n꼬르르륵...\n")
     }
 }

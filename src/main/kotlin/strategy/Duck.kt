@@ -1,13 +1,11 @@
 package strategy
 
-import strategy.interfaces.FlyBehavior
-import strategy.interfaces.FlyWithWings
-import strategy.interfaces.Quack
-import strategy.interfaces.QuackBehavior
+import strategy.interfaces.*
 
 open abstract class Duck {
     var flyBehavior: FlyBehavior = FlyWithWings()
     var quackBehavior: QuackBehavior = Quack()
+    var swimBehavior: SwimBehavior = Swim()
 
     abstract fun display()
 
@@ -20,6 +18,6 @@ open abstract class Duck {
     }
 
     fun performSwim() {
-        println("모든 오리는 헤엄을 칠 수 있습니다. 모든 오리는 물에 뜹니다.")
+        swimBehavior.swim()
     }
 }
