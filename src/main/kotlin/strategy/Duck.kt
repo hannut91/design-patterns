@@ -5,7 +5,7 @@ import strategy.interfaces.FlyWithWings
 import strategy.interfaces.Quack
 import strategy.interfaces.QuackBehavior
 
-open abstract class Duck {
+abstract class Duck {
     var flyBehavior: FlyBehavior = FlyWithWings()
     var quackBehavior: QuackBehavior = Quack()
 
