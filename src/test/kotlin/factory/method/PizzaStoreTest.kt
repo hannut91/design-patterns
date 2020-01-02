@@ -1,0 +1,13 @@
+package factory.method
+
+import factory.method.store.NYPizzaStore
+import org.junit.Test
+
+internal class PizzaStoreTest {
+    @Test
+    fun `피자 스토어 테스트`() {
+        val nyStore = NYPizzaStore()
+
+        nyStore.orderPizza("cheese")
+    }
+}
